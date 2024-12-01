@@ -30,10 +30,12 @@ effectively predict anomalies.  We will then attempt build a model that is more 
 ## Training Details
 - Base model: EleutherAI/pythia-14m
 - Dataset: https://zenodo.org/records/8196385/files/HDFS_v1.zip?download=1 + preprocessed data at honicky/log-analysis-hdfs-preprocessed
-- Batch size: 4
-- Max sequence length: 343
+- Batch size: 16
+- Max sequence length: 405
 - Learning rate: 0.0001
-- Training steps: 2110
+- Training steps: 30000
+- Weights and Biases run: https://wandb.ai/honicky/log-analysis-pythia/runs/7vp6bdoz
+- Huggingface: [honicky/pythia-14m-hdfs-logs](https://huggingface.co/honicky/pythia-14m-hdfs-logs)
 
 ## Special Tokens
 - Added `<|sep|>` token for event ID separation
@@ -46,6 +48,6 @@ This model is intended for:
 
 ## Limitations
 - Model is specifically trained on HDFS logs and may not generalize to other log formats
-- Limited to the context window size of 343 tokens
+- Limited to the context window size of 405 tokens
 
 
